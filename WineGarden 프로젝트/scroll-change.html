@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap');
+
+        body {
+            position: relative;
+        }
+
+        section {
+            height: 100vh;
+            width: 100%;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        section::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            transition: background 250ms cubic-bezier(0.32, -0.24, 0.24, 0.98);
+            z-index: 2;
+        } 
+
+        section:hover::after {
+            transition-timing-function: cubic-bezier(1, 1.6, 0.3, 1);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        section+section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 99;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        section:nth-of-type(1) div {
+            background-image:url('images/tasting-bg.jpg');
+        }
+
+        section:nth-of-type(2) div {
+            background-image:url('images/tasting-bg2.jpg')
+        }
+
+        section:nth-of-type(3) div {
+            background-image:url('images/tour-bg3.jpg')
+        }
+
+        section:nth-of-type(4) div {
+            background-image:url('images/tour-bg.jpg')
+        }
+
+        section div {
+            position: fixed;
+            opacity: 0;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100vh;
+            transition: opacity 250ms linear;
+            background-blend-mode: multiply;
+        }
+
+        section article {
+            width: 95%;
+            max-width: 600px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            padding: 1rem 2rem;
+            box-sizing: border-box;
+            background: rgba(0, 0, 0, 0.8);
+            box-shadow: 0px 1px 0px 2px rgba(255, 255, 255, 0.05);
+            transform: translateX(-50%) translateY(0%); /*X값만 주어서 밑에서 올라오도록*/
+            transition: transform 500ms cubic-bezier(0.32, -0.24, 0.24, 0.98);
+        }
+
+        section h1 {
+            margin-top: 1rem;
+        }
+
+        section:hover>div {
+            opacity: 1;
+        }
+
+        section:hover>div article {
+            transform: translateX(-50%) translateY(-50%);
+        }
+
+        section>div,
+        div.bg {
+            background-position: center;
+            background-size: cover;
+        }
+
+        div.bg {
+            position: fixed;
+            pointer-events: none;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100vh;
+            background-blend-mode: multiply;
+            background-color: black;
+            z-index: -1;
+        }
+
+        body {
+            background-color: black;
+            color: #d7d7ce;
+        }
+
+        h1 {
+            font-size:40px;
+            font-family:'Playfair Display';
+            font-weight: 100;
+            width: 100%;
+            text-align: center;
+            margin-top: 0;
+        }
+
+        p {
+            line-height: 1.6;
+            font-weight: 100;
+            font-size:18px;
+            font-family: 'Segoe UI';
+        }
+    </style>
+ 
+</head>
+
+<body>
+   
+    <section id=s1>
+        <div>
+            <article>
+                <h1>1 day tour</h1>
+                <p>Right now you are reading content inside of a fixed-position child of a relatively-positioned
+                    transparent area.</p>
+                <p>You are hovering over the transparent area (the white tint background) which is displaying this
+                    content. This fixed child content has a colored background image with a blend mode which appears to
+                    modify the original background image you saw before hover.</p>
+                <p>If you keep scrolling down you will see a line. If you hover beneath that line you will be hovering
+                    over the next section and it will make this content disappear.</p>
+            </article>
+        </div>
+    </section>
+    <section id=s2>
+        <div>
+            <article>
+                <h1>Wine Tasting</h1>
+                <p>You are now reading the second section's fixed content with a green background. This is because you
+                    are hovering over the second section (the white tint background).</p>
+                <p>If you didn't move your mouse and scrolled to get here, you may have noticed that the hover event
+                    doesn't fire until scrolling has completely stopped. This is default browser behavior.</p>
+                <p>This means you can quickly scroll to the bottom of the page and it will skip the sections along the
+                    way.</p>
+            </article>
+        </div>
+    </section>
+    <section id=s3>
+        <div>
+            <article>
+                <h1>Party room</h1>
+                <p>As you can see, the result is pretty amazing for not using any Javascript. This goes to show you that
+                    CSS can do some pretty crazy things.</p>
+            </article>
+        </div>
+    </section>
+    <section id=s4>
+        <div>
+            <article>
+                <h1>Accommodation</h1>
+                <p>First off, you cant select this text because the "hover" section areas are sitting on top of it. This
+                    is because we need to hover event to make this work.</p>
+                <p>Secondly, this pen is useless if you aren't hovering over it, so you cant use this on a tablet or
+                    phone. Relying on hover is a terrible idea.</p>
+            </article>
+        </div>
+    </section>
+
+    
+
+    <div class=bg></div>
+</body>
+
+
+
+
+</html>

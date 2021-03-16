@@ -1,0 +1,435 @@
+/*초기화*/
+body{ 
+    padding: 0;
+    margin: 0;
+    background-color:rgb(24 20 19);
+}
+/*--메인메뉴부분--*/
+a {
+    text-decoration: none;
+    color: whitesmoke;
+    cursor:pointer;
+    font-size: 12pt;
+    font-weight: bold;
+}
+  ul,li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.header {
+    float: left;
+    display: fixed;
+    width: 100%;
+    height: 80px;
+    position: relative;
+    min-width: 800px;
+    background-color: #2e2925;
+    opacity: 0.97;
+    margin: 0;
+    z-index: 10;/*맨 앞 정렬*/
+}
+.header div.menubar {
+    width: 800px;
+    height: 100%;
+    margin:0 auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+.header .menubar ul.nav:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+div.menubar ul.nav{
+    list-style: none;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 100px;
+    padding: 0px;
+    margin: 0px;
+}
+
+div.menubar ul.nav li {
+    float: left;
+    padding: 0 50px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 80px;
+}
+
+div.menubar ul.nav li a{
+    position: relative;
+}
+div.menubar ul.nav li a::after{
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 105%;
+    height: 2px;
+    background: #cc3423;
+    transform: scaleX(0);
+    transition: 0.3s all ease-out;
+}
+div.menubar ul.nav li:hover>a::after{
+    transform: scaleX(1);
+}
+div.menubar ul.nav li>a.linebar::after{
+    transform: scaleX(1);
+}
+div.menubar ul.sideMenu{
+    position: relative;
+    float: right;
+    right: -40px;
+    padding: 0;
+    margin-top: 23px;
+    list-style: none;
+}
+div.menubar ul.sideMenu li {
+    display: inline-block;
+}
+
+div.menubar ul.sideMenu li a{
+    display: block;
+    font-size: 20px; /*이미지 크기 조정*/
+    padding: 0px 5px;
+    width: 23px;
+    height: 30px;
+    border-radius: 50%;
+    transition: 0.5s; /*hover와 연계되어 fade-in/out연출가능*/
+}
+ul.sideMenu > li:nth-child(1):hover > a{ 
+    background-color:#00446e;
+}
+ul.sideMenu > li:nth-child(2):hover > a{
+    background-color: #00185B;
+}
+ul.sideMenu > li:nth-child(3):hover > a{
+    background-color:#3F0F00;
+}
+.header div.menubar h1{
+    float: left;
+}
+/*--서브메뉴부분--*/
+div.subMenu {
+    width: 100%;
+    min-width: 800px;
+    height: 170px;
+    background: rgb(44, 39, 36); 
+    opacity: 0.97; 
+    clear: both;
+    margin:0 auto;
+    padding: 0;
+    text-align: center;
+    display: none;
+    position: absolute;
+    top:80px; /*메인 메뉴의 세로 길이 80px*/
+    z-index: 9;
+}
+div.subMenu>ul{
+    color: #5a5a5a;
+    display: inline-block;
+    width: 700px;
+    height: 100%;
+    padding: 0 10px;
+}
+div.subMenu>ul>li {
+    display: inline-block;
+    position: relative;
+    padding: 0 70px;
+    
+}
+div.subMenu>ul>li>ul{
+    display: block;
+    position: absolute;
+    line-height: 33px;
+    margin-top: -20px;
+    text-align: left;
+    /* text-align: center; */
+}
+div.subMenu>ul>li:nth-child(1){ /*리스트 별 위치 지정*/
+    top: 0;
+    left: -35px;
+    /* left: -40px; */
+}
+div.subMenu>ul>li:nth-child(2){
+    top: 0;
+    left: -30px;
+    /* left: -57px; */
+    width: 80px;
+}
+
+div.subMenu>ul>li:nth-child(3){
+    top: 0;
+    left: -80px;
+    /* left: -110px; */
+    width: 60px;   
+}
+div.subMenu>ul>li:nth-child(4){
+    top: -20px;
+    left: 255px;
+    /* left: 225px; */
+    width: 70px;
+}
+
+.subMenu ul li ul li a:hover{
+    color: rgb(255, 100, 100);
+}
+/*--본문--*/
+p, h4 {
+    color: whitesmoke;
+    font-family: '나눔고딕';
+    
+}
+header{
+    color: whitesmoke;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.bg {
+    margin: 0px;
+    padding: 0px;
+    background-image: url("../images/Winery-Vineyard.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: 40%;
+    width: 100%;
+    height: 550px;
+    filter: brightness(105%);
+}
+.main{
+    max-width: 1200px;
+    min-width: 786px;
+    margin: 0 auto;
+}
+.greeting{
+    display: inline;
+    padding: 10px;
+    text-align: center;
+}
+.greeting header {
+    font-size: 20pt;
+}
+.line{
+    margin: 20px 0px;
+}
+hr{
+    width: 100%;
+    max-width: 1150px;
+}
+button{
+    cursor: pointer;
+    color: whitesmoke;
+    background-color: RGB(64,26,0);
+    outline: 0;
+}
+
+.article1 {
+    position: relative;
+    left: 0;
+    top: 0px;
+    width: 100%;
+    padding: 20px 10px;
+    min-width: 800px;
+    height: 35vw;
+    min-height: 290px;
+    max-height: 400px;
+}
+
+.text_wrap1 {
+    position: absolute;
+    left: 52%;
+    max-width: 500px;
+    top:-20px;
+    width: 45%;
+    max-height: 231px;
+    padding: 0;
+}
+.lastbox{
+    display: inline-block; 
+    position: relative;
+    margin: 0 auto;
+    margin-left: 10px;
+    margin-top: 40px;
+}
+.autoplay{
+    margin: 10px 30px;    
+    width: 300px;
+    height: 100px;    
+}
+.autoplay img{
+    width: 100px;
+}
+
+.article1 img {
+    position: absolute;
+    width: 50%;
+    max-width: 590px;
+    right: 50%;
+    top: 0;
+}
+
+.article2 {
+    position: relative;
+    left: 0;
+    top: 0px;
+    width: 100%;
+    padding: 20px 10px;
+    min-width: 800px;
+    height: 30vw;
+    min-height: 230px;
+    max-height: 300px;
+}
+.article2 img {
+    position: absolute;
+    width: 50%;
+    max-width: 590px;
+    right: 50%;
+    top: 0;
+}
+.article3 {
+    position: relative;
+    left: 0;
+    top: 0px;
+    width: 100%;
+    padding: 20px 10px;
+    min-width: 800px;
+    height: 30vw;
+    min-height: 230px;
+    max-height: 280px;
+}
+.article3 img {
+    position: absolute;
+    width: 50%;
+    max-width: 590px;
+    right: 50%;
+    max-height: 300px;
+    top: 0;
+}
+
+.text_wrap {
+    position: absolute;
+    left: 52%;
+    max-width: 500px;
+    top:-20px;
+    width: 45%;
+    height: 90%;
+    padding: 0;
+    
+}
+.text_wrap .text{
+    display: inherit;
+    top: 0;
+    left: 0;
+    padding: 4vw 0;
+}
+.text h4 {
+    font-family: 'Playfair Display';
+    font-size: 10pt;
+}
+
+.text p {
+    vertical-align: middle;
+    line-height: 180%;
+}
+.text button{
+    display: block;
+    padding: 10px;
+}
+/*--푸터부분--*/
+.footer {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    background-color: rgb(24 20 19) ;;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.918);
+    margin-bottom: 0;
+}
+
+.footer div#img{
+    padding-top: 10px;
+}
+.footer div.comInfo #endBarList li {
+    list-style: none;
+    display: inline-block;
+    padding:20px 8px ;
+    margin: 0;
+    text-decoration : none;
+    display: inline-block; 
+}
+
+/* .footer div.endBar li a{
+    text-decoration: none;
+    color: #fff;
+    position: relative;
+    bottom: -100px;
+    font-size: 11px;
+
+} */
+
+.footer div.comInfo p{
+    color: #aba9a8;
+    position: relative;
+    /* bottom: -100px; */
+    font-size: 13px;
+    line-height:10px; 
+}
+
+.footer .wrapper{
+    /* position: absolute; */
+    /* width: 100%; */
+    /* bottom: 0px; */
+    /* height: 60%; */
+    /* background: #0e0c0b; */
+    /* border: 10px solid sienna; */
+    /* bottom: -130px; */
+    /* bottom: 0px;  여기까지가 기존 부분*/
+
+    position: inherit; /*여기는 맥심 style코드 긁은 부분입니다 */
+    width: 100%;
+    color: #fff;
+    background: #0e0c0b;
+    text-align: center;
+    clear: both;
+    margin-top: 60px;
+    display: inline-block;
+    bottom: 0;
+}
+
+
+.footer div.comInfo p{
+    line-height:20px; 
+}
+.footer div.comInfo p span#fontHeight{
+    line-height:60px; 
+}
+.page_scroll{
+    position: absolute;
+    display: inline;
+    left: calc(50% - 30px);
+    z-index: 1;
+    animation: mouse 2s infinite ease-in-out;
+    width: 60px;
+    transform: rotate( 180deg );
+}
+@keyframes mouse {
+	0% {
+			bottom:190px
+	}
+	50% {
+			bottom:210px
+	}
+	100% {
+			bottom:190px
+	}
+}
+.page_scroll:hover{
+    transition: 0.5s;
+    filter:invert(100%);
+}

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winery Tours and Tastings</title>
+    <link rel="stylesheet" href="css/fullpage.min.css" />
+    <link rel="stylesheet" href="css/tourpage.css">
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+
+        $(document).ready(function () {
+
+            var maxY = window.scrollY;
+            var maxY = $(document).height() - $(window).height();
+
+            $("#btn").click(function () {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            })
+
+            $(window).on("scroll", function () {
+                // 윈도우 스크롤 위치 구하기
+                var strInfo = window.pageYOffset;
+
+                console.log(maxY, strInfo);
+
+                if (strInfo > maxY * 0.1 & strInfo <= maxY * 0.3) {
+                    $('#s1').addClass('active');
+                    $('#s2').removeClass('active');
+                } else if (strInfo > maxY * 0.3 && strInfo <= maxY * 0.5) {
+                    $('#s1').removeClass('active');
+                    $('#s2').addClass('active');
+                    $('#s3').removeClass('active');
+                } else if (strInfo > maxY * 0.5 && strInfo <= maxY * 0.7) {
+                    $('#s2').removeClass('active');
+                    $('#s3').addClass('active');
+                    $('#s4').removeClass('active');
+                } else if (strInfo > maxY * 0.7 && strInfo <= maxY * 0.9) {
+                    $('#s3').removeClass('active');
+                    $('#s4').addClass('active');
+                } else {
+                    $('section').removeClass('active');
+                }
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+    <div class="header">
+        <div class="menubar">
+            <h1>
+                <a id="logodefault" href="index.html">
+                    <img src="images/logo.png" style="margin-top:-20px;height:78px;">
+                </a>
+            </h1>
+            <ul class="nav">
+                <li><a href="#" class="menu1 unprepared ">ABOUT</a></li>
+                <li><a href="product.html" class="menu2 prepared">PRODUCT</a></li>
+                <li><a href="#" class="menu3 unprepared">TOUR</a></li>
+                <li><a href="#" class="menu4 unprepared">OFFERS</a></li>
+            </ul>
+            <ul class="sideMenu">
+                <li><a href="#"><i class="fab fa-twitter"></a></i></li>
+                <li><a href="#"><i class="fab fa-facebook-f"></a></i></li>
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="subMenu">
+        <ul>
+            <li>
+                <ul class="sub1">
+                    <li><a href="#" class="unprepared">History</a></li>
+                    <li><a class="prepared" href="wineCellar.html">Winery</a></li>
+                    <li><a href="#" class="unprepared">Location</a></li>
+                    <li><a href="#" class="unprepared">Contact</a></li>
+                </ul>
+            </li>
+            <li>
+                <ul class="sub2">
+                    <li><a href="#" class="unprepared">Eixerial</a></li>
+                    <li><a href="#" class="unprepared">Seduct</a></li>
+                    <li><a href="#" class="unprepared">Reflexir</a></li>
+                    <li><a href="#" class="unprepared">Eixer ice</a></li>
+                </ul>
+            </li>
+            <li>
+                <ul class="sub3">
+                    <li><a class="prepared" href="tourpage.html">1 day tour</a></li>
+                    <li><a href="#" class="unprepared">guide tour</a></li>
+                    <li><a href="#" class="unprepared">Delux tour</a></li>
+                    <li><a href="#" class="unprepared">Group Packages</a></li>
+                </ul>
+            </li>
+            <li>
+                <ul class="sub4">
+                    <li><a class="prepared" href="getSnowedInn.html">Get Snowed Inn</a></li>
+                    <li><a class="prepared" href="holidayparties.html">Holiday Parties</a></li>
+                    <li><a href="#" class="unprepared">Wedding Package</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div id="page">
+        <div id="info">
+            <!-- 투어 안내 비디오 -->
+            <div class="article1" id="video">
+                <video src="images/tour3.mp4" autoplay loop muted poster="images/winery.jpg" id="bg">
+                    <strong>해당 브라우저는 비디오가 지원되지 않습니다.</strong>
+                </video>
+                <div class="video-text">
+                    <h1><span>Good</span> Drinks<span> for</span><br /><span>&emsp;&emsp;Good</span>
+                        Moments<span>.</span></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section id=s1>
+        <div>
+            <article>
+                <h1>1 day tour</h1>
+                <p>Welcome to Wine Garden! How about 1 day tour?<br/>
+                You can enjoy 1 day tour in our winery. We have fabulous sight-seeing course in the vineyard.<br/>
+                You can also pick up some grapes and even make wine on your own.<br/>
+                <p>In the end of the day, you can bring a bottle of happiness with you.</p>
+            </article>
+        </div>
+    </section>
+    <section id=s2>
+        <div>
+            <article>
+                <h1>Wine Tasting</h1>
+                <p>Try our heavenly drops with your beloved ones.<br/>We offer tasting experience at our very own premium wine bar. We have various kinds of wine in
+                    Winegarden.</p>
+                <p>We do have options for kids.<br/>So don't worry for young little company, enjoy your wine time.</p>
+            </article>
+        </div>
+    </section>
+    <section id=s3>
+        <div>
+            <article>
+                <h1>Party room</h1>
+                <p>We have beautiful and cozy party rooms.<br/> 
+                Get our special party ball room and throw a fabulous party with your friends.</p>
+                <p>We also offer catering services.(Extra charge will be needed)</p>
+                <p>If you book the space, you will book wonderful time as well.<br/>
+                When you are with Winegarden's wine, everyday is party day.</p>
+            </article>
+        </div>
+    </section>
+    <section id=s4>
+        <div>
+            <article>
+                <h1>Accommodation</h1>
+                <p>Are you looking for warm and cozy holiday inn for your family and companies?<br/>
+                Come to Winegarden and stay our accommodation.<br/>
+                Clean and nice bed sheets and warm indoor bonfire are waiting for you.</p>
+                <p>Have a nice holiday with your beloved ones!</p>
+            </article>
+        </div>
+    </section>
+    <div class=bg>
+    </div>
+
+    <div class="section footer">
+        <div class="wrapper"></div>
+
+        <div class="comInfo">
+            <input type="button" id="btn">
+            <ul id="endBarList">
+                <li><a href="#">개인정보처리방침</a></li>
+                <li><a href="#">이용약관</a></li>
+                <li><a href="#">이용안내</a></i>
+            </ul>
+            <p>WINECELLAR | 서울특별시 마포구 백범로 23 | 대표자 : 이황박유 외 3인<br>
+                W_KOREA | 대표이사 : 제임스 문 | 대표번호 : 070-1234-3456 | 팩스 : 02-1234-3456<br>
+                신고번호 : 제 1110120호 | 개인정보보호책임자 : 장길동 <br>
+                <span id="fontHeight"> ⓒ Copyright 2021 bitcamp. All rights reserved </span>
+            </p>
+        </div>
+    </div>
+    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+    <script src="js/mainMenu.js"></script>
+</body>
+
+</html>
